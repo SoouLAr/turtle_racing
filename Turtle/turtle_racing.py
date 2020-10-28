@@ -1,13 +1,16 @@
 import turtle
 from random import randint
+import time
+
 
 window=turtle.Screen()
 window.bgcolor('white')
 turtles=[]
 k = 0
 
+
 colors=['red', 'green', 'blue', 'violet', 'purple', 'orange', 'darkblue', 'black']
-for i in range(6):
+for i in range(8):
     lines=turtle.Turtle()
     lines.hideturtle()
     lines.penup()
@@ -42,7 +45,7 @@ while not cond:
     for t in turtles:
         speed=randint(1,20) if not cond else 0
         t.forward(speed/5)
-        if t.xcor()>250:
+        if t.xcor()>length*50:
             t.shapesize(2)
             t.write('\t\tWINNER')
             cond = True
